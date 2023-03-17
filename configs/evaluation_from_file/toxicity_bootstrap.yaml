@@ -1,0 +1,14 @@
+# @package _global_
+
+defaults:
+  - /metric:
+      - detoxify
+  - override /datamodule: out_ds_rtp
+
+bootstrap_n: 50
+num_workers: 1
+
+bootstrap_run_method: "from_scores_per_datapoint"
+confidence_level: 0.95
+
+seed: 123

@@ -1,0 +1,12 @@
+dataset_parameters:
+  train:
+    dataloader:
+      batch_size: 1
+
+  val:
+    dataloader:
+      batch_size: 1
+
+  test:
+    dataloader:
+      batch_size: 1

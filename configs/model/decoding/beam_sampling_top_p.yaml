@@ -1,0 +1,16 @@
+name: beam_sampling_top_p
+
+hf_generation_params:
+  num_beams: 5
+  num_return_sequences: ${.num_beams}
+  num_beam_groups: 1
+  do_sample: True
+  #constraints: None
+
+  top_k: 0
+  top_p: 0.92
+
+  early_stopping: false
+
+  temperature: 1.0
+  length_penalty: 1.0

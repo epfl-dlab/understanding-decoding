@@ -1,0 +1,8 @@
+# ToDo: Incorporate into Translation model
+_target_: src.loggers.ReconstructionLogger
+
+logging_interval: 100 # Every 100 optimization steps
+samples_per_train_interval: 5 # Log 5 train samples
+
+samples_per_val_interval: 10 # Log 10 validation samples
+num_samples_per_z_to_consider: 3

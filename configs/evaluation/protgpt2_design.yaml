@@ -1,0 +1,23 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run_evaluation.py evaluation=gs-st_grid_identity
+
+defaults:
+  - override /datamodule: swissprot
+  - override /model: protgpt2_lm
+  - override /callbacks: default
+  - override /logger: wandb
+  - override /trainer: gpu
+
+# the parameters below will be merged with parameters from the default configurations set above
+# this allows you to overwrite only a small/specific set of parameters
+datamodule:
+  debug: False
+
+model:
+  save_testing_output:
+    save_log_likelihood: True
+
+# name of the run determines folder name in logs
+run_name: "protgpt2_design_v1"

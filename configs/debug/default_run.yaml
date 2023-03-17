@@ -1,0 +1,25 @@
+# @package _global_
+
+# default debugging setup which runs for 100 steps – a starting point for the other configs
+# doesn't override any trainer / accelerator parameters
+
+defaults:
+  - override /hydra: debug
+
+num_steps: 100
+num_validation_runs: 1
+
+trainer:
+  max_steps: ${num_steps}
+  track_grad_norm: 2 # track gradient norm with loggers
+  val_check_interval: ${floor_div:${num_steps}, ${num_validation_runs}}
+  #  Available in newer version of PL
+  #  detect_anomaly: true # raise exception if NaN or +/-inf is detected in any tensor
+
+# sets level of all command line loggers to 'DEBUG'
+# https://hydra.cc/docs/tutorials/basic/running_your_app/logging/
+hydra:
+  verbose: True
+
+# config is already printed by hydra when `hydra/verbose: True`
+print_config: False

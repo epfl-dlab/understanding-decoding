@@ -1,0 +1,14 @@
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - matplotlib
+  - tqdm
+  - jupyter
+  - matplotlib
+  - ipykernel
+  - jupyterlab

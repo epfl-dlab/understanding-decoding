@@ -1,0 +1,15 @@
+_target_: src.mdp.evaluation_models.NoisyOracleMT
+
+bleu_score:
+  _target_: src.metrics.BLEUScore
+  lowercase: False
+  max_ngram_order: 4
+  tokenize: "none"
+  smooth_method: "exp"
+
+noising_function_parameters:
+  lambda: 0.1 # the weight associated to the true target's BLEU in the linear combination
+#  lambda: 0.8 # the weight associated to the true target's BLEU in the linear combination
+
+operate_on: "ids"
+l_strip: 0

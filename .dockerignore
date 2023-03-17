@@ -1,0 +1,6 @@
+# Ignore everything
+**
+
+#  Allow files and directories
+!pip_requirements.txt
+!requirements.yaml

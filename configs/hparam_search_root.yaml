@@ -1,0 +1,35 @@
+defaults:
+  - _self_
+  - trainer: cpu
+  - logger: wandb_standalone # wandb #null # set logger here or use command line (e.g. `python run.py logger=wandb`)
+  - hparam_search: hparams_bs_toxicity
+  - hydra: hparam_search
+
+  # enable color logging
+  - override hydra/hydra_logging: colorlog
+  - override hydra/job_logging: colorlog
+
+# verbose explanation: Hydra hijacks the working directory by changing it to the current log directory,
+# so it's useful to have this path as a special variable
+# learn more here: https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+work_dir: ${hydra:runtime.cwd}
+
+# path to folder with data
+data_dir: ${work_dir}/data/
+
+# pretty print config at the start of the run using Rich library
+print_config: False
+
+# disable python warnings if they annoy you
+ignore_warnings: True
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 123
+
+# the parent experiment (hparam search run) name -- determines the logging folder's parent
+parent_run_name: ???
+
+# the experiment name (either_combination – determines the logging folder's path
+run_name: ???
+
+search: ???

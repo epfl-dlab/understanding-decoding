@@ -1,0 +1,18 @@
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  mode: "min"
+  factor: 0.8
+  patience: 2
+  threshold: 0.001
+  threshold_mode: "abs"
+  cooldown: 1
+  min_lr: 1e-6
+  eps: 1e-8
+  verbose: True
+
+scheduler_dict:
+  scheduler: null # the schedule instance defined above – will be passed from the code (in configure_optimizer)
+  interval: "epoch" # The unit of the scheduler's step size. 'step' or 'epoch
+  frequency: 1 # corresponds to updating the learning rate after every `frequency` epoch/step
+  monitor: train/loss # Used by a LearningRateMonitor callback when ReduceLROnPlateau is used
+  name: LearningRateScheduler_${model.scheduler_config.scheduler._target_}

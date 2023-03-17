@@ -1,0 +1,16 @@
+# @package _global_
+
+# runs 2 epochs of training, validation
+# each with a limited number of `num_batches` batches
+
+defaults:
+  - default_run.yaml
+
+trainer:
+  max_steps: ${num_steps}
+  overfit_batches: ${num_batches}
+  val_check_interval: ${floor_div:${num_steps}, ${num_validation_runs}}
+
+num_steps: 20
+num_batches: 5
+num_validation_runs: 2

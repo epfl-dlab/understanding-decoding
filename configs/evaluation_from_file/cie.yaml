@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - /metric:
+    - triplet_set_precision
+    - triplet_set_recall
+    - triplet_set_f1
+  - override /datamodule: out_ds_rebel

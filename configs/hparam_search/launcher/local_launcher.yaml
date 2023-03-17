@@ -1,0 +1,2 @@
+_target_: src.hparam_search.launchers.LocalLauncher
+work_dir: ${work_dir}

@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - /metric:
+      #    - bleu-1
+      - bleu-4
+  - override /datamodule: out_ds_wmt14
+
+bootstrap_n: 50
+num_workers: 1
+
+bootstrap_run_method: "from_metric"
+confidence_level: 0.95
+
+seed: 1233

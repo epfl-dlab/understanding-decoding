@@ -1,0 +1,43 @@
+defaults:
+  - decoding: [genie_generic, beam_search]
+  - collator: rebel_collator
+
+_target_: src.models.GeniePL
+
+random_initialization: False
+from_checkpoint: False
+pretrained_model_name_or_path: "martinjosifoski/genie-rw"
+
+max_input_length: 256
+max_output_length: 256
+bos_as_first_token_generated: True
+
+hf_config:
+  _target_: transformers.BartConfig.from_pretrained
+  pretrained_model_name_or_path: ${..pretrained_model_name_or_path}
+
+hf_model:
+  pretrained_model_name_or_path: ${..pretrained_model_name_or_path}
+  config: ${..hf_config}
+
+tokenizer:
+  _target_: transformers.BartTokenizer.from_pretrained
+  pretrained_model_name_or_path: ${..pretrained_model_name_or_path}
+
+save_testing_output:
+  save_log_likelihood: False
+
+optimizer:
+  # --- Learning rates and Schedulers ---
+  lr: 3.0e-05
+  weight_decay: 0.01
+  schedule_name: "polynomial"
+  lr_end: 0.0
+
+  warmup_updates: 1000
+  total_num_updates: ${trainer.max_steps}
+
+  # --- Optimizer ---
+  adam_eps: 1.0e-08
+
+eps: 0.1

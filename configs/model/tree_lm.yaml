@@ -1,0 +1,16 @@
+defaults:
+  - decoding: beam_search
+
+_target_: src.mdp.tree_lm.TreeLanguageModel
+
+tree:
+  _target_: src.mdp.trees.ExplicitTree
+  path: ??? # e.g. tests/toy_mdp_configs/greedy_fail_tm.txt
+
+config:
+  _target_: src.mdp.tree_lm.TreeLanguageModelConfig
+
+  # Note that this pattern will create a new object of tree. See https://github.com/facebookresearch/hydra/issues/1393
+  # An alternative solution is to pass the tree in the constructor
+  tree: ${..tree}
+  decoding: ${..decoding}

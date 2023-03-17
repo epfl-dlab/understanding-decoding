@@ -1,0 +1,29 @@
+defaults:
+  - decoding: [protgpt2_generic, beam_search]
+
+_target_: src.models.ProtGPT2ForGeneration
+
+random_initialization: False
+from_checkpoint: False
+
+hf_config:
+  _target_: transformers.AutoConfig.from_pretrained
+  pretrained_model_name_or_path: "nferruz/ProtGPT2"
+  pad_token_id: 50256
+
+hf_model:
+  pretrained_model_name_or_path: "nferruz/ProtGPT2"
+  config: ${..hf_config}
+
+tokenizer:
+  _target_: transformers.AutoTokenizer.from_pretrained
+  pretrained_model_name_or_path: "nferruz/ProtGPT2"
+  padding_side: "left"
+  pad_token: "<|endoftext|>"
+
+metric:
+  _target_: transformers.AutoModelForSequenceClassification.from_pretrained
+  pretrained_model_name_or_path: "Rostlab/prot_bert_bfd_membrane"
+
+save_testing_output:
+  save_log_likelihood: False

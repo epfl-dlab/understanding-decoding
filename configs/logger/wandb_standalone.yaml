@@ -1,0 +1,15 @@
+# https://wandb.ai
+
+logger_name: wandb_standalone
+wandb:
+  project: "understanding-decoding" # The name of the project where you're sending the new run. Default: Uncategorized runs
+  name: ${run_name} # A short display name for this run, which is how you'll identify this run in the UI. Default: Randomly generated two word name
+  # save_dir: "." # (only for PL WandbLogger)
+  # offline: False # set True to store all logs only locally # (only for PL WandbLogger)
+  id: null # A unique ID for this run, used for resuming! See guide for resuming runs..
+  entity: null # set to name of your wandb team
+  # log_model: False # (only for PL WandbLogger)
+  job_type: "train" # Specify the type of run, which is useful when you're grouping runs together into larger experiments using group
+  group: "" # TODO: We might want to use this flag when using distributed training --> https://docs.wandb.ai/guides/track/advanced/grouping
+  tags: []
+  notes:

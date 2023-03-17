@@ -1,0 +1,9 @@
+_target_: src.hparam_search.search.GridSearch
+
+max_workers: 1 # maximum number of trials to run in parallel
+
+run_name_str: null
+run_name_vars: null
+
+scripts: ??? # path to the script to run
+search_space: ??? # Dictionary implemented using https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.ParameterGrid.html

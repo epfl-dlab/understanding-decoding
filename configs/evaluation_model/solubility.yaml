@@ -1,0 +1,2 @@
+_target_: src.mdp.evaluation_models.SolubilityEvaluationModel
+device: "cuda:0"

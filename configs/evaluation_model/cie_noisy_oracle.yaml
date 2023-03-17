@@ -1,0 +1,4 @@
+_target_: src.mdp.evaluation_models.NoisyOracleGenIE
+
+noising_function_parameters:
+  sigma: 0.4 # with 10 additional tokens, prob of flip ~ 0.48. Falls back to the perfect oracle for sigma: 0

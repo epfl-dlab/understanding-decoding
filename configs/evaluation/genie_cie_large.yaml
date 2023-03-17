@@ -1,0 +1,34 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run_evaluation.py evaluation=gs-st_grid_identity
+
+defaults:
+  - override /datamodule: rebel
+  - override /model: ckpt_genie_genre_r
+  - override /callbacks: null
+  - override /trainer: gpu
+
+# the parameters below will be merged with parameters from the default configurations set above
+# this allows you to overwrite only a small/specific set of parameters
+datamodule:
+  debug: False
+  debug_k: 12
+
+model:
+  checkpoint_path: ${data_dir}/models/genie_genre_r.ckpt
+  save_testing_output:
+    save_log_likelihood: True
+
+  hparams_overrides:
+    decoding:
+      # Results in undesired behavior for decoding strategies with fixed `num_beams` (e.g. greedy search)
+      # hf_generation_params:
+      #   num_beams: 10
+      #   num_return_sequences: ${.num_beams}
+      free_generation: False # Set to true in development – loading the tries take time
+      entity_trie_path: ${data_dir}/tries/large/entity_trie.pickle
+      relation_trie_path: ${data_dir}/tries/large/relation_trie.pickle
+
+# name of the run determines folder name in logs
+run_name: "genie_cie_large"

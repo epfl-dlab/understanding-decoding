@@ -1,0 +1,5 @@
+defaults:
+  - decoding: [genie_generic, beam_search] # override from command line as model/decoding=[genie_generic,beam_sampling]
+
+_target_: src.models.GeniePL.load_from_checkpoint
+checkpoint_path: "${data_dir}/models/genie_genre_r.ckpt"

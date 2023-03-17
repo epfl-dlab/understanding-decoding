@@ -1,0 +1,41 @@
+# @package _global_
+
+defaults:
+  - override /trainer: gpu
+  - override /model: mbart_cd
+  - override /datamodule: wmt14
+
+  - override /callbacks: null # set to null if you don't want to use callbacks
+  - override /logger: null # set to null if you don't want to use any loggers
+  - override /training: null
+
+  - override /hydra: debug
+  - _self_
+
+datamodule:
+  debug: True
+  num_workers: 0 # debuggers don't like multiprocessing
+  pin_memory: False # disable gpu memory pin
+
+# set to True to run model evaluation (for cleaner logs, running evaluation using the evaluation script is preferred)
+test: False
+
+# verbose explanation: Hydra hijacks the working directory by changing it to the current log directory,
+# so it's useful to have this path as a special variable
+# learn more here: https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+work_dir: ${hydra:runtime.cwd}/../
+
+# path to folder with data
+data_dir: ${work_dir}/data/
+
+# pretty print config at the start of the run using Rich library
+print_config: True
+
+# disable python warnings if they annoy you
+ignore_warnings: True
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 123
+
+# the experiment name – determines the logging folder's path
+run_name: test_translation

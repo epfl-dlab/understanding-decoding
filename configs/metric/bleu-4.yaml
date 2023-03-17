@@ -1,0 +1,6 @@
+bleu-4:
+  _target_: src.metrics.BLEUScore
+  lowercase: False
+  max_ngram_order: 4
+  tokenize: 13a
+  smooth_method: "exp"

@@ -1,0 +1,3 @@
+_target_: src.mdp.evaluation_models.DetoxifyEvaluationModel
+model_type: unbiased-small # To remove and make mandatory
+device: "cuda:0"

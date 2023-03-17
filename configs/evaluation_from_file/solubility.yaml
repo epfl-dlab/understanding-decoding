@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - /metric:
+      - protein_soluble
+  - override /datamodule: out_ds_swissprot
+
+seed: 123

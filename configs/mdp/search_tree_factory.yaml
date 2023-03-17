@@ -1,0 +1,13 @@
+_target_: src.mdp.SearchTreeFactory
+
+tree_structure_params:
+  depth: 6
+  branching_factor: 4
+  decay_branching_factor: 1
+
+transition_model_params:
+  alpha: 0.9
+
+utility_value_params:
+  ul_alignment: 0.3
+  uu_alignment: 1

@@ -1,0 +1,3 @@
+sample_generator_wandb:
+  _target_: src.callbacks.generate_samples.GenerateTextSamplesCallback
+  logging_batch_interval: ${trainer.val_check_interval} # Invoke wandb logger for sample generation every m training batches.

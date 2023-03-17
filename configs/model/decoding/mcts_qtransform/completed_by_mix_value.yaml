@@ -1,0 +1,7 @@
+_partial_: true
+_target_: mctx.qtransform_completed_by_mix_value
+value_scale: 0.1
+maxvisit_init: 50.0
+rescale_values: True
+use_mixed_value: True
+epsilon: 1e-8

@@ -1,0 +1,2 @@
+_target_: ??? # e.g. src.models.MBartForConditionalGeneration.load_from_checkpoint
+checkpoint_path: ???

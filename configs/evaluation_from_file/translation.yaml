@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - /metric:
+#    - bleu-1
+    - bleu-4
+  - override /datamodule: out_ds_wmt14
+
+seed: 1233

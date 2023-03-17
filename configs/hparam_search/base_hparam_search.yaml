@@ -1,0 +1,4 @@
+run_name: ${num_files:${work_dir}/logs/hparam_search/${parent_run_name}} # DON'T INTERPOLATE! It changes with every call!
+search: ???
+launcher: ???
+parent_run_name: ???

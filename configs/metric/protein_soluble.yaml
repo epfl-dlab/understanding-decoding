@@ -1,0 +1,4 @@
+protein_soluble:
+  _target_: src.metrics.SolubleScore
+  name: soluble
+  device: 0

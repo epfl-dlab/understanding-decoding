@@ -1,0 +1,5 @@
+defaults:
+  - decoding: null # choose your decoding strategy by setting this to a decoding algorithm
+
+target_language_id: fr_XX
+seed: ${seed}

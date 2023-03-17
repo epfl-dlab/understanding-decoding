@@ -1,0 +1,11 @@
+defaults:
+  - decoding: null # choose your decoding strategy by setting this to a decoding algorithm
+
+hf_generation_params:
+  max_length: 256
+  early_stopping: false
+
+  temperature: 1.0
+  length_penalty: 1.0
+
+seed: ${seed}

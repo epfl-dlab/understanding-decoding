@@ -1,0 +1,2 @@
+_target_: src.datamodules.RebelOutputDataset
+exp_dir: ${..exp_dir}

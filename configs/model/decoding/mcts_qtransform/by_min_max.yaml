@@ -1,0 +1,4 @@
+_partial_: true
+_target_: mctx.qtransform_by_min_max
+max_value: 1.0
+min_value: -1.0

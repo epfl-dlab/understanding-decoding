@@ -1,0 +1,5 @@
+defaults:
+  - detoxify_noisy_oracle
+
+model_type: "noisy_oracle_rmse_01991"
+checkpoint: ${data_dir}detoxify/noisy_oracles/N-Step-Checkpoint_epoch=0_global_step=800.ckpt

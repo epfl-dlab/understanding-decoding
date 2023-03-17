@@ -1,0 +1,7 @@
+defaults:
+  - mt_noisy_oracle
+
+bleu_score:
+  max_ngram_order: 2
+
+l_strip: 1

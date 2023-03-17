@@ -1,0 +1,48 @@
+_target_: src.datamodules.ProteinDataModule
+num_workers: 24
+seed: ${seed} # not used
+
+debug: true
+debug_k: 12 # needs to be specified when debug is True
+
+prompt_length: 50 
+
+dataset_parameters:
+  train:
+    dataset:
+      _target_: src.datamodules.ProteinDataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      split: "train"
+      prompt_length: 50
+
+    dataloader:
+      batch_size: 5
+      num_workers: ${datamodule.num_workers}
+
+  val:
+    dataset:
+      _target_: src.datamodules.ProteinDataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      split: "validation"
+      prompt_length: 50
+
+    dataloader:
+      batch_size: 5
+      num_workers: ${datamodule.num_workers}
+
+  test:
+    dataset:
+      _target_: src.datamodules.ProteinDataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      split: "test"
+      prompt_length: 50
+
+    dataloader:
+      batch_size: 4
+      num_workers: ${datamodule.num_workers}

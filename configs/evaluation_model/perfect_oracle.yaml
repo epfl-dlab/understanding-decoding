@@ -1,0 +1,3 @@
+_target_: src.mdp.oracles.PerfectOracle
+tree: ${model.tree} # ToDo: this should be more general. Currently model is HF model; should be PL module
+path: ???

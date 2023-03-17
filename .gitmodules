@@ -1,0 +1,6 @@
+[submodule "mctx"]
+	path = mctx
+	url = https://github.com/epfl-dlab/mctx.git
+[submodule "transformers"]
+	path = transformers
+	url = https://github.com/epfl-dlab/transformers.git

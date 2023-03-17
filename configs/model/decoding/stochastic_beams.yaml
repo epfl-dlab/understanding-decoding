@@ -1,0 +1,13 @@
+name: stochastic_beams
+
+hf_generation_params:
+  num_beams: 5
+  num_return_sequences: ${.num_beams}
+  num_beam_groups: 1
+  do_stochastic: true
+  do_sample: false  # has to be set to false, if do_stochastic is true
+
+  early_stopping: false
+
+  temperature: 1.0 # Does this have any effect?
+  length_penalty: 1.0

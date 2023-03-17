@@ -1,0 +1,53 @@
+_target_: src.datamodules.WMT14DataModule
+num_workers: 24
+seed: ${seed} # controls the seed for the noisy oracles
+
+debug: false
+debug_k: 12 # needs to be specified when debug is True
+cache_dir: ${data_dir}wmt14 # The default is ~/.cache/huggingface/datasets, which has rather limited space
+
+dataset_parameters:
+  train:
+    dataset:
+      _target_: src.datamodules.WMT14Dataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      load_dataset_params:
+        name: "fr-en"
+        split: "train"
+        cache_dir: ${datamodule.cache_dir}
+
+    dataloader:
+      batch_size: 5
+      num_workers: ${datamodule.num_workers}
+
+  val:
+    dataset:
+      _target_: src.datamodules.WMT14Dataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      load_dataset_params:
+        name: "fr-en"
+        split: "validation"
+        cache_dir: ${datamodule.cache_dir}
+
+    dataloader:
+      batch_size: 5
+      num_workers: ${datamodule.num_workers}
+
+  test:
+    dataset:
+      _target_: src.datamodules.WMT14Dataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      load_dataset_params:
+        name: "fr-en"
+        split: "test"
+        cache_dir: ${datamodule.cache_dir}
+
+    dataloader:
+      batch_size: 4
+      num_workers: ${datamodule.num_workers}

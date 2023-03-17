@@ -1,0 +1,19 @@
+name: mcts
+
+hf_generation_params:
+  use_cache: True
+  use_pplmcts: True
+  num_beams: 1
+  num_beam_groups: 1
+  num_return_sequences: 1
+
+  mcts_debug_prints: False
+
+  mcts_pb_c_init: 3.0
+  mcts_num_simulations: 50
+  mcts_topk_actions: 20
+
+  reuse_cached_jitted_mcts: null # not used by PPLMCTS
+  mcts_pb_c_base: null # not used by PPLMCTS
+  mcts_dirichlet_fraction: null # not used by PPLMCTS
+  mcts_dirichlet_alpha: null # not used by PPLMCTS

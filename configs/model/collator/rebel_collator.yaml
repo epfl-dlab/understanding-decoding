@@ -1,0 +1,7 @@
+_target_: src.models.collators.RebelCollator
+tokenizer: null
+max_input_length: null
+max_output_length: null
+padding: True
+truncation: True
+target_padding_token_id: null

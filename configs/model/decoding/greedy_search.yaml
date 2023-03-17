@@ -1,0 +1,7 @@
+name: greedy_search
+
+hf_generation_params:
+  num_beams: 1
+  num_beam_groups: 1
+  do_sample: False
+  #constraints: None

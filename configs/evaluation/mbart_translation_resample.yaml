@@ -1,0 +1,24 @@
+# @package _global_
+
+defaults:
+  - mbart_translation
+  - override /datamodule: [wmt14, resample]
+  - override /model/decoding: [mbart_generic, stochastic_beams]
+
+# the parameters below will be merged with parameters from the default configurations set above
+# this allows you to overwrite only a small/specific set of parameters
+datamodule:
+  debug: False
+  debug_k: 12
+
+  num_qs: 5 # Number of quantiles to select (e.g. 10 will produce 11 plots corresponding to the 0, 0.1, ... 1. qunatiles)
+
+model:
+  resample_exp: True
+  n_sim: 10
+  decoding:
+    hf_generation_params:
+      num_return_sequences: 10
+
+# name of the run determines folder name in logs
+run_name: "mbart_translation_resample"

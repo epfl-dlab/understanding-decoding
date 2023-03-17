@@ -1,0 +1,13 @@
+wandb_run_path: ???
+exp_dir: None
+num_qs: ???
+
+dataset_parameters:
+  test:
+    dataset:
+      resample_exp: true
+      exp_dir: ${datamodule.exp_dir}
+      num_qs: ${datamodule.num_qs}
+
+    dataloader:
+      batch_size: 1

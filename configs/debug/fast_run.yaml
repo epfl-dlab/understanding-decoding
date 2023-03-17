@@ -1,0 +1,15 @@
+# @package _global_
+
+# disables the callbacks and the loggers
+# runs `num_batches` train, validation and test steps
+
+# ideal for a fast debug run
+
+defaults:
+  - default_run.yaml
+
+trainer:
+  fast_dev_run: ${num_batches}
+
+ckpt_path: null
+num_batches: 5

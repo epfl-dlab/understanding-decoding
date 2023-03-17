@@ -1,0 +1,31 @@
+defaults:
+  - decoding: null # choose your decoding strategy by setting this to a decoding algorithm
+
+hf_generation_params:
+  min_length: 0
+  max_length: 256
+  early_stopping: false
+
+  encoder_no_repeat_ngram_size: 0
+  no_repeat_ngram_size: 0
+
+  temperature: 1.0
+  length_penalty: 1.0
+  forced_bos_token_id: 0
+
+seed: ${seed}
+verbose_flag_in_convert_to_triple: false
+# GenIE defaults
+#num_beams: 10
+#num_return_sequences: ${.num_beams}
+#
+#min_length: 0
+#max_length: ${...max_output_length}
+#
+#early_stopping: false
+#
+#encoder_no_repeat_ngram_size: 0
+#no_repeat_ngram_size: 0
+#
+#temperature: 1.0
+#length_penalty: 1.0

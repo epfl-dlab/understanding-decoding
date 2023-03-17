@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - override /trainer: cpu
+  - override /model: tree_lm
+  - override /model/decoding: stochastic_beams
+  - override /datamodule: null
+
+  - override /callbacks: null # set to null if you don't want to use callbacks
+  - override /logger: null # set to null if you don't want to use any loggers
+  - override /training: null
+
+  - override /hydra: debug
+  - _self_
+#model.decoding.hf_generation_params:
+#  encoder_no_repeat_ngram_size: 0
+#  no_repeat_ngram_size: 0
+#
+#  temperature: 1.0
+#  length_penalty: 1.0
+#  forced_bos_token_id: 0

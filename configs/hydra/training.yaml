@@ -1,0 +1,15 @@
+# output paths for hydra logs
+run:
+  dir: logs/training/runs/${run_name}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+
+sweep:
+  dir: logs/training/multiruns/${run_name}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+  subdir: ${hydra.job.num}
+
+# you can set here environment variables that are universal for all users
+job:
+  env_set:
+    CUDA_DEVICE_ORDER: "PCI_BUS_ID"
+    HYDRA_FULL_ERROR: "1"
+# Set cuda visible devices from command line: export CUDA_VISIBLE_DEVICES=0;python evaluate_kilt_dataset.py
+# Or python run.py +hydra.job.env_set.CUDA_VISIBLE_DEVICES="3'

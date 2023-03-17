@@ -1,0 +1,47 @@
+_target_: src.datamodules.RTPDataModule
+num_workers: 24
+seed: ${seed} # not used
+
+debug: true
+debug_k: 12 # needs to be specified when debug is True
+
+dataset_data_dir: ${data_dir}rtp/
+dataset_parameters:
+  train:
+    dataset:
+      _target_: src.datamodules.RTPDataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      dataset_data_dir: ${data_dir}rtp/
+      split: "train"
+
+    dataloader:
+      batch_size: 5
+      num_workers: ${datamodule.num_workers}
+
+  val:
+    dataset:
+      _target_: src.datamodules.RTPDataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      dataset_data_dir: ${data_dir}rtp/
+      split: "validation"
+
+    dataloader:
+      batch_size: 5
+      num_workers: ${datamodule.num_workers}
+
+  test:
+    dataset:
+      _target_: src.datamodules.RTPDataset
+      seed: ${datamodule.seed}
+      debug: ${datamodule.debug}
+      debug_k: ${datamodule.debug_k}
+      dataset_data_dir: ${data_dir}rtp/
+      split: "test"
+
+    dataloader:
+      batch_size: 4
+      num_workers: ${datamodule.num_workers}

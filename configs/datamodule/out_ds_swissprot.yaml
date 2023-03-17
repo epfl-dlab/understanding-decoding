@@ -1,0 +1,2 @@
+_target_: src.datamodules.ProteinOutputDataset
+exp_dir: ${..exp_dir}

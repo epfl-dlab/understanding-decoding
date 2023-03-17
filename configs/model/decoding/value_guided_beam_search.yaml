@@ -1,0 +1,17 @@
+name: value_guided_beam_search
+
+hf_generation_params:
+  num_beams: 5
+  num_return_sequences: ${.num_beams}
+  num_beam_groups: 1
+  early_stopping: false
+  length_penalty: 1.0
+
+  do_value_guided: true
+  do_sample: false
+  do_stochastic: false
+
+  #  top_hypothesis_factor: 2
+  tokens_considered_by_value_processor: 10 # Must be a number larger than 2 * num_beams
+  contribution_factor: 0.1  # The weight of the likelihood the linear interpolation between the likelihood and the value
+  #  contribution_factor: 0.7  # The weight of the likelihood the linear interpolation between the likelihood and the value

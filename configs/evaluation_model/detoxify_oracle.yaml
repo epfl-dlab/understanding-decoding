@@ -1,0 +1,8 @@
+defaults:
+  - detoxify_noisy_oracle
+
+model_type: unbiased-small # To remove and make mandatory
+checkpoint: null
+# Same as
+# model_type: null
+# checkpoint: ${data_dir}detoxify/oracle/unbiased-albert-c8519128.ckpt

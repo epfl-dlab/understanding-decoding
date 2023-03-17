@@ -1,0 +1,10 @@
+_target_: src.mdp.evaluation_models.OracleMT
+
+bleu_score:
+  _target_: src.metrics.BLEUScore
+  lowercase: False
+  max_ngram_order: 4
+  tokenize: "none"
+  smooth_method: "exp"
+
+operate_on: "ids"

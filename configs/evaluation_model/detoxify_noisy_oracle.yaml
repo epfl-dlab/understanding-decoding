@@ -1,0 +1,7 @@
+_target_: src.mdp.evaluation_models.NoisyOracleDetoxify
+
+device: "cpu"
+huggingface_config_path: null
+batch_size: 40
+model_type: ???
+checkpoint: ???

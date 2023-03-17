@@ -1,0 +1,25 @@
+defaults:
+  - decoding: [mbart_generic, beam_search] # override from command line as model/decoding=[mbart_generic, beam_sampling]
+
+_target_: src.models.MBartForConditionalGeneration
+
+random_initialization: False
+from_checkpoint: False
+
+hf_config:
+  _target_: transformers.MBartConfig.from_pretrained # config class
+  pretrained_model_name_or_path: "facebook/mbart-large-50-one-to-many-mmt"
+
+hf_model:
+  pretrained_model_name_or_path: "facebook/mbart-large-50-one-to-many-mmt"
+  config: ${..hf_config}
+
+tokenizer:
+  _target_: transformers.MBart50TokenizerFast.from_pretrained
+  pretrained_model_name_or_path: "facebook/mbart-large-50-one-to-many-mmt"
+  src_lang: "en_XX"
+  tgt_lang: "fr_XX"
+#  activation_dropout: 3  # overrides given as kwargs
+
+save_testing_output:
+  save_log_likelihood: False

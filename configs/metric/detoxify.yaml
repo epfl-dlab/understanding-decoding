@@ -1,0 +1,4 @@
+detoxify:
+  _target_: src.metrics.DetoxifyScore
+  model_type: unbiased-small # To remove and make mandatory
+  device: "cuda:0"
