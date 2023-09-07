@@ -7,11 +7,26 @@
 This repository contains the PyTorch implementation for the experiments in [Language Model Decoding as Likelihood-Utility Alignment](https://arxiv.org/abs/2210.07228). The codebase is built upon [PytorchLightning](https://www.pytorchlightning.ai/) and [Hydra](https://hydra.cc/).
 
 ```
-@article{josifoski2022language,
-  title     = {Language Model Decoding as Likelihood-Utility Alignment},
-  author    = {Josifoski, Martin and Peyrard, Maxime and Rajic, Frano and Wei, Jiheng and Paul, Debjit and Hartmann, Valentin and Patra, Barun and Chaudhary, Vishrav and Kiciman, Emre and Faltings, Boi and West, Robert},
-  journal   = {arXiv preprint arXiv:2210.07228},
-  year={2022}
+@inproceedings{josifoski-etal-2023-language,
+    title = "Language Model Decoding as Likelihood{--}Utility Alignment",
+    author = "Josifoski, Martin  and
+      Peyrard, Maxime  and
+      Raji{\v{c}}, Frano  and
+      Wei, Jiheng  and
+      Paul, Debjit  and
+      Hartmann, Valentin  and
+      Patra, Barun  and
+      Chaudhary, Vishrav  and
+      Kiciman, Emre  and
+      Faltings, Boi",
+    booktitle = "Findings of the Association for Computational Linguistics: EACL 2023",
+    month = may,
+    year = "2023",
+    address = "Dubrovnik, Croatia",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-eacl.107",
+    pages = "1455--1470",
+    abstract = "A critical component of a successful language generation pipeline is the decoding algorithm. However, the general principles that should guide the choice of a decoding algorithm remain unclear. Previous works only compare decoding algorithms in narrow scenarios, and their findings do not generalize across tasks. We argue that the misalignment between the model{'}s likelihood and the task-specific notion of utility is the key factor in understanding the effectiveness of decoding algorithms. To structure the discussion, we introduce a taxonomy of misalignment mitigation strategies (MMSs), providing a unifying view of decoding as a tool for alignment. The MMS taxonomy groups decoding algorithms based on their implicit assumptions about likelihood{--}utility misalignment, yielding general statements about their applicability across tasks. Specifically, by analyzing the correlation between the likelihood and the utility of predictions across a diverse set of tasks, we provide empirical evidence supporting the proposed taxonomy and a set of principles to structure reasoning when choosing a decoding algorithm. Crucially, our analysis is the first to relate likelihood-based decoding algorithms with algorithms that rely on external information, such as value-guided methods and prompting, and covers the most diverse set of tasks to date. Code, data, and models are available at https://github.com/epfl-dlab/understanding-decoding.",
 }
 ```
 **Please consider citing our work, if you found the provided resources useful.**<br>
